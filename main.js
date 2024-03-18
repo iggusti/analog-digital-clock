@@ -12,6 +12,14 @@ function displayTime() {
     });
   };
 
+  const updateDigitalClock = (id, value) => {
+    document.getElementById(id).innerHTML = value.toString().padStart(2, "0");
+  };
+
+  updateDigitalClock("digi-hour", hh);
+  updateDigitalClock("digi-min", mm);
+  updateDigitalClock("digi-sec", ss);
+
   updateClock(document.getElementById("hourLine"), rotate(30, hh) + mm / 2, hh);
   updateClock(document.getElementById("minuteLine"), rotate(6, mm), mm);
   updateClock(document.getElementById("secondLine"), rotate(6, ss), ss);
