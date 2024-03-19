@@ -6,7 +6,7 @@ function displayTime() {
 
   const updateClock = (element, rotation, value) => {
     element.style.transform = `rotate(${rotation}deg)`;
-    element.querySelectorAll(".clock_number").forEach((clockNumber) => {
+    element.querySelectorAll(".clock-number").forEach((clockNumber) => {
       clockNumber.innerHTML = value;
       clockNumber.style.transform = `rotate(${-rotation}deg)`;
     });
@@ -16,13 +16,13 @@ function displayTime() {
     document.getElementById(id).innerHTML = value.toString().padStart(2, "0");
   };
 
-  updateDigitalClock("digi-hour", hh);
-  updateDigitalClock("digi-min", mm);
-  updateDigitalClock("digi-sec", ss);
+  updateDigitalClock("digiHour", hh);
+  updateDigitalClock("digiMin", mm);
+  updateDigitalClock("digiSec", ss);
 
-  updateClock(document.getElementById("hourLine"), rotate(30, hh) + mm / 2, hh);
-  updateClock(document.getElementById("minuteLine"), rotate(6, mm), mm);
-  updateClock(document.getElementById("secondLine"), rotate(6, ss), ss);
+  updateClock(document.getElementById("anaHour"), rotate(30, hh) + mm / 2, hh);
+  updateClock(document.getElementById("anaMin"), rotate(6, mm), mm);
+  updateClock(document.getElementById("anaSec"), rotate(6, ss), ss);
 }
 
 setInterval(displayTime, 1000);
